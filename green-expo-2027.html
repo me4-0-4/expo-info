@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GREEN×EXPO 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#FBFBF7;
+  --leaf:#E7F0DF;
+  --ink:#1B2A1F;
+  --sub:#4B5A4F;
+  --green:#23733D;
+  --green-l:#8CC79A;
+  --pink:#FF7A85;
+  --yellow:#F2C230;
+  --blue:#3C7BD9;
+  --line:#CFDCC6;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Helvetica Neue",Arial,"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:16px;line-height:1.8;letter-spacing:.03em;line-break:strict;overflow-wrap:anywhere;
+}
+.r{font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN",sans-serif}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--green);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,32px);line-height:1.3;margin:0 0 24px;letter-spacing:.01em}
+section{padding:96px 0 0}
+
+/* hero */
+.hero{background:var(--leaf);border-radius:0 0 48px 48px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:48px;align-items:center;padding-top:64px;padding-bottom:64px}
+.hero h1{margin:0;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(34px,5.4vw,68px);line-height:1.05;letter-spacing:0;color:var(--green)}
+.hero h1 small{display:block;font-size:.42em;color:var(--ink);margin-top:14px;letter-spacing:.02em}
+.copy{margin:28px 0 0;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,26px)}
+.when{margin:20px 0 0;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(22px,3vw,32px);line-height:1.3}
+.when span{display:block;font-weight:400;font-size:16px;color:var(--sub);margin-top:4px}
+.hero svg{width:100%;height:auto;display:block;max-width:340px;justify-self:end}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-top:40px;padding-bottom:48px}.hero svg{max-width:260px;justify-self:start;order:-1}}
+
+/* overview */
+.ov{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;margin:0}
+.ov>div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ov dt{font-weight:700;color:var(--green)}
+.ov dd{margin:0}
+@media (max-width:760px){.ov{grid-template-columns:1fr}.ov>div{grid-template-columns:1fr;gap:2px}}
+
+/* theme */
+.theme{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
+.theme .main{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.35;margin:0}
+.theme .main span{display:block;font-size:16px;font-weight:400;color:var(--sub);margin-top:8px;letter-spacing:.02em}
+.subs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 32px}
+.subs li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start}
+.dot{width:28px;height:28px;border-radius:50% 50% 50% 0;margin-top:2px}
+.subs b{display:block;font-size:18px}
+.subs span{color:var(--sub);font-size:15px}
+@media (max-width:760px){.theme{grid-template-columns:1fr;gap:32px}.subs{grid-template-columns:1fr}}
+
+/* calendar */
+.cal{display:flex;flex-direction:column;gap:6px}
+.m{display:grid;grid-template-columns:3.2em minmax(0,1fr);align-items:center;gap:8px}
+.m>b{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:15px;color:var(--sub)}
+.days{display:grid;grid-template-columns:repeat(31,minmax(0,1fr));gap:3px}
+.d{aspect-ratio:1;border-radius:50%;background:#E4E8E0}
+.d.on{background:var(--green-l)}
+.d.sum{background:var(--yellow)}
+.d.edge{background:var(--pink)}
+.d.today{outline:2px solid var(--ink);outline-offset:1px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:14px;color:var(--sub)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.count{margin:28px 0 0;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:700}
+.count b{font-weight:800;font-size:40px;color:var(--green);margin:0 4px}
+
+/* villages */
+.vil{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.vil li{padding:10px 22px;border-radius:999px;background:var(--leaf);font-weight:700;font-size:17px}
+
+/* tickets */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px;background:#fff}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{padding:14px 18px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+thead th{font-size:14px;color:var(--sub);font-weight:700;background:var(--leaf)}
+tbody tr:last-child td{border-bottom:0}
+td small{display:block;color:var(--sub);font-size:13px;line-height:1.5}
+.age{margin-top:12px;font-size:14px;color:var(--sub)}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding-top:56px}
+.steps li::before{content:counter(s);position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
+.steps b{display:block;font-size:18px}
+.steps span{color:var(--sub);font-size:15px}
+@media (max-width:760px){.steps{grid-template-columns:1fr;gap:24px}}
+
+/* two col */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+.kv{margin:0}
+.kv>div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.kv dt{font-weight:700;color:var(--green)}
+.kv dd{margin:0}
+.big{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:44px;line-height:1.1;color:var(--green)}
+@media (max-width:760px){.two{grid-template-columns:1fr;gap:72px}.kv>div{grid-template-columns:1fr;gap:2px}}
+
+/* history */
+.hist{list-style:none;margin:0;padding:0;border-left:4px solid var(--green-l);margin-left:8px}
+.hist li{position:relative;padding:0 0 22px 28px;display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:12px}
+.hist li::before{content:"";position:absolute;left:-12px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--green)}
+.hist li.future::before{background:var(--ground);border:4px solid var(--green);box-sizing:border-box}
+.hist li.key::before{background:var(--pink)}
+.hist time{font-weight:700}
+@media (max-width:640px){.hist li{grid-template-columns:1fr;gap:0}}
+
+.caution{background:var(--leaf);border-radius:20px;padding:24px 28px;max-width:46em}
+.caution h3{margin:0 0 6px;font-size:18px}
+.caution p{margin:0}
+footer{padding:80px 0 64px;font-size:14px;color:var(--sub)}
+footer h2{font-size:18px;margin-bottom:12px}
+footer ul{margin:0;padding-left:1.2em}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1 lang="en"><span style="white-space:nowrap">GREEN×EXPO 2027</span><small lang="ja"><span style="display:inline-block">2027年国際園芸博覧会</span>　<span style="display:inline-block">横浜・上瀬谷</span></small></h1>
+      <p class="copy">地球と。咲きに行こう。</p>
+      <p class="when num">2027.3.19 – 9.26<span>192日間　9:30–21:30（最終入場21:00）</span></p>
+    </div>
+    <svg viewBox="0 0 400 400" aria-hidden="true">
+      <circle cx="200" cy="112" r="92" fill="#23733D"/>
+      <circle cx="288" cy="200" r="92" fill="#3C7BD9"/>
+      <circle cx="200" cy="288" r="92" fill="#FF7A85"/>
+      <circle cx="112" cy="200" r="92" fill="#F2C230"/>
+      <circle cx="200" cy="200" r="46" fill="#FBFBF7"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>概要</h2>
+    <dl class="ov">
+      <div><dt>区分</dt><dd>A1クラス（AIPH承認、BIE認定）。日本では1990年の大阪「花の万博」以来37年ぶり</dd></div>
+      <div><dt>会場</dt><dd>横浜市旭区・瀬谷区の旧上瀬谷通信施設。博覧会区域 約100ha</dd></div>
+      <div><dt>参加</dt><dd class="num">86か国・地域と5国際機関（外務省、2026年9月7日時点）</dd></div>
+      <div><dt>来場目標</dt><dd>有料来場者1,000万人以上。オンラインなども含めた総参加者1,500万人</dd></div>
+      <div><dt>展示</dt><dd>花と緑 約1,000万株</dd></div>
+      <div><dt>マスコット</dt><dd>トゥンクトゥンク（2024年6月22日に名前決定）</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap theme">
+    <p class="main">幸せを創る<br>明日の風景<span lang="en">Scenery of the Future for Happiness</span></p>
+    <ul class="subs">
+      <li><i class="dot" style="background:#23733D"></i><div><b>自然との調和</b><span lang="en">Co-adaptation</span></div></li>
+      <li><i class="dot" style="background:#3C7BD9"></i><div><b>緑や農による共存</b><span lang="en">Co-existence</span></div></li>
+      <li><i class="dot" style="background:#FF7A85"></i><div><b>新産業の創出</b><span lang="en">Co-creation</span></div></li>
+      <li><i class="dot" style="background:#F2C230"></i><div><b>連携による解決</b><span lang="en">Co-operation</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>192日間</h2>
+    <div class="cal" id="cal" role="img" aria-label="2027年3月19日から9月26日までの会期カレンダー。7月と8月は夏パスの対象期間"></div>
+    <div class="legend">
+      <span><i style="background:var(--pink)"></i>開幕日・閉幕日</span>
+      <span><i style="background:var(--green-l)"></i>会期</span>
+      <span><i style="background:var(--yellow)"></i>夏パス対象（7.1–8.31）</span>
+    </div>
+    <p class="count" id="count" hidden>開幕まで<b class="num" id="countn"></b>日</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>5つのVillage</h2>
+    <ul class="vil" lang="en">
+      <li>Urban GX Village</li>
+      <li>Craft Village</li>
+      <li>Farm &amp; Food Village</li>
+      <li>Kids Village</li>
+      <li>SATOYAMA Village</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>チケット</h2>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">券種</th><th scope="col">大人</th><th scope="col">中人</th><th scope="col">小人</th></tr></thead>
+        <tbody>
+          <tr><td>1日券（早割）<small>2027年3月18日まで</small></td><td>4,900円</td><td>3,000円</td><td>1,400円</td></tr>
+          <tr><td>1日券（通常）<small>会期中</small></td><td>5,500円</td><td>3,300円</td><td>1,500円</td></tr>
+          <tr><td>夜間券<small>17時以降入場。3月19日〜8月31日販売</small></td><td>3,500円</td><td>1,900円</td><td>900円</td></tr>
+          <tr><td>夏パス<small>7月1日〜8月31日。同時予約は3日まで</small></td><td>12,000円</td><td>7,000円</td><td>3,000円</td></tr>
+          <tr><td>通期パス<small>同時予約は4日まで</small></td><td>28,000円</td><td>16,000円</td><td>6,500円</td></tr>
+          <tr><td>特別割引券<small>障害者手帳等をお持ちの方</small></td><td>2,800円</td><td>1,700円</td><td>800円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="age">大人18歳以上、中人12〜17歳、小人4〜11歳、3歳以下無料。税込み。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>行くまでの流れ</h2>
+    <ol class="steps">
+      <li><b>チケットを買う</b><span>公式チケットサイト、コンビニなど</span></li>
+      <li><b>来場日時を予約</b><span>2026年9月18日から受付。先着順で、変更は3回まで</span></li>
+      <li><b>シャトルバス・駐車場を予約</b><span>どちらも事前予約制。9月18日から受付</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two">
+    <div>
+      <h2>アクセス</h2>
+      <dl class="kv">
+        <div><dt>シャトルバス</dt><dd>瀬谷、三ツ境、南町田グランベリーパーク、十日市場の4駅から。10〜25分、大人200円、小人100円</dd></div>
+        <div><dt>徒歩</dt><dd>瀬谷駅から約30分</dd></div>
+        <div><dt>直行バス</dt><dd>新横浜、横浜駅、みなとみらい、関内、羽田空港から調整中</dd></div>
+        <div><dt>駐車場</dt><dd>平日5,000円、土日祝7,000円（予約制）</dd></div>
+        <div><dt>自転車</dt><dd>駐輪場は無料</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h2>日本政府苑</h2>
+      <p style="margin:0 0 20px;font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:24px;line-height:1.5">日本の自然観を再考し、未来へ進む</p>
+      <dl class="kv">
+        <div><dt>出展</dt><dd>国土交通省、農林水産省</dd></div>
+        <div><dt>内容</dt><dd>伝統的な庭園技術や自然観と、新しい農業技術・グリーンインフラの融合</dd></div>
+        <div><dt>起工式</dt><dd>2025年11月4日</dd></div>
+      </dl>
+      <p style="margin:40px 0 0" class="big num">59<span style="font-size:18px;color:var(--ink);margin-left:8px">の国・機関</span></p>
+      <p style="margin:4px 0 0;color:var(--sub);font-size:15px">ナショナルデー・スペシャルデーの日程が決定（2026年9月15日発表）</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>これまでと、これから</h2>
+    <ol class="hist num" id="hist">
+      <li data-date="2023-01-10"><time>2023.1.10</time><span>基本計画を策定</span></li>
+      <li data-date="2023-04-28"><time>2023.4.28</time><span>公式ロゴマーク決定</span></li>
+      <li data-date="2024-06-22"><time>2024.6.22</time><span>マスコット「トゥンクトゥンク」の名前決定</span></li>
+      <li data-date="2025-11-04"><time>2025.11.4</time><span>日本政府出展の起工式</span></li>
+      <li data-date="2026-03-19"><time>2026.3.19</time><span>開幕1年前。早割チケット発売</span></li>
+      <li data-date="2026-09-18"><time>2026.9.18</time><span>来場日時予約、シャトルバス・駐車場予約の受付開始</span></li>
+      <li data-date="2026-12-09"><time>2026.12.9</time><span>開幕100日前（東京スカイツリーの特別ライティング予定）</span></li>
+      <li class="key" data-date="2027-03-19"><time>2027.3.19</time><span>開幕</span></li>
+      <li class="key" data-date="2027-09-26"><time>2027.9.26</time><span>閉幕</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="caution">
+      <h3>会期の日数について</h3>
+      <p>公式サイトの開催概要は「約191日間」、2026年9月15日のプレスリリースは「192日間」としています。3月19日から9月26日までを数えると192日になるため、ここでは192日間と表記しています。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>出典</h2>
+    <ul>
+      <li><a href="https://expo2027yokohama.or.jp/about/overview/">開催概要（GREEN×EXPO 2027 公式）</a></li>
+      <li><a href="https://expo2027yokohama.or.jp/">公式トップページ</a></li>
+      <li><a href="https://expo2027yokohama.or.jp/assets/docs/tickets-index/greenexpo2027-admission-ticket-system-ja.pdf">入場チケット制度（公式・PDF）</a></li>
+      <li><a href="https://expo2027yokohama.or.jp/assets/docs/news/press_20260827.pdf">来場日時予約の詳細（公式・PDF）</a></li>
+      <li><a href="https://expo2027yokohama.or.jp/assets/docs/news/press_20260915_3.pdf">開催まであと半年（公式・PDF）</a></li>
+      <li><a href="https://expo2027yokohama.or.jp/assets/docs/news/press_20260902_1.pdf">トゥンクトゥンク 東京スカイツリー特別ライティング（公式・PDF）</a></li>
+      <li><a href="https://expo2027yokohama.or.jp/access/">会場への交通アクセス（公式）</a></li>
+      <li><a href="https://expo2027yokohama.or.jp/learn-enjoy/japan-gov-garden/">日本政府苑（公式）</a></li>
+      <li><a href="https://www.mofa.go.jp/mofaj/ecm/epc/pagew_000001_01820.html">参加表明のあった国・国際機関（外務省）</a></li>
+      <li><a href="https://www.mofa.go.jp/mofaj/gaiko/hakurankai/banpaku/expo2027.html">2027年国際園芸博覧会（外務省）</a></li>
+      <li><a href="https://www.maff.go.jp/j/seisan/kaki/flower/expo2027.html">2027年国際園芸博覧会（農林水産省）</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var DAY=86400000;
+  var now=new Date();
+  var today=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());
+  var start=Date.UTC(2027,2,19), end=Date.UTC(2027,8,26);
+  var sumA=Date.UTC(2027,6,1), sumB=Date.UTC(2027,7,31);
+  var cal=document.getElementById('cal');
+  for(var m=2;m<=8;m++){
+    var row=document.createElement('div');row.className='m';
+    var lab=document.createElement('b');lab.textContent=(m+1)+'月';row.appendChild(lab);
+    var days=document.createElement('div');days.className='days';
+    var n=new Date(Date.UTC(2027,m+1,0)).getUTCDate();
+    for(var d=1;d<=n;d++){
+      var t=Date.UTC(2027,m,d);
+      var c=document.createElement('span');c.className='d';
+      if(t>=start&&t<=end){
+        c.className+=' on';
+        if(t>=sumA&&t<=sumB)c.className+=' sum';
+        if(t===start||t===end)c.className+=' edge';
+      }
+      if(t===today)c.className+=' today';
+      days.appendChild(c);
+    }
+    row.appendChild(days);cal.appendChild(row);
+  }
+  var left=Math.round((start-today)/DAY);
+  if(left>0){document.getElementById('countn').textContent=left;document.getElementById('count').hidden=false;}
+  [].forEach.call(document.querySelectorAll('#hist li'),function(li){
+    var p=li.dataset.date.split('-');
+    if(Date.UTC(+p[0],p[1]-1,+p[2])>today&&!li.classList.contains('key'))li.classList.add('future');
+  });
+})();
+</script>
+</body>
+</html>

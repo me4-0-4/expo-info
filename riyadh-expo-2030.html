@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>リヤド万博2030</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#1A1730;
+  --paper:#241F3D;
+  --ink:#F3EFE4;
+  --sub:#B4ABC6;
+  --gold:#D4A828;
+  --gold-d:#8A6A1E;
+  --line:#3A3459;
+  --rule:2px solid var(--gold);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Helvetica Neue",Arial,"BIZ UDPGothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:16px;line-height:1.85;letter-spacing:.03em;line-break:strict;overflow-wrap:anywhere;
+}
+.disp{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;letter-spacing:.01em}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--gold);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:clamp(24px,3.2vw,32px);margin:0 0 32px;line-height:1.4;color:var(--gold)}
+section{padding:96px 0 0}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero svg{display:block;width:100%;height:auto}
+.hero-text .wrap{padding-top:56px;padding-bottom:56px}
+.hero .kicker{font-size:14px;letter-spacing:.14em;color:var(--sub)}
+.hero .kicker b{color:var(--gold)}
+.hero h1{margin:14px 0 0;font-size:clamp(38px,7.2vw,80px);line-height:1.15}
+.hero h1 span{display:block;font-size:.32em;color:var(--sub);margin-top:10px;font-weight:500;font-family:"Helvetica Neue",Arial,sans-serif}
+.hero .theme{margin:24px 0 0;font-size:clamp(17px,2.2vw,21px);color:var(--sub);max-width:30em}
+.hero .theme b{color:var(--ink)}
+@media (max-width:640px){.hero-text .wrap{padding-top:36px;padding-bottom:40px}}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:var(--rule)}
+.facts>div{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:22px 20px}
+.facts dt{font-weight:700;font-size:13px;color:var(--sub)}
+.facts dd{margin:6px 0 0}
+.facts .big{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:clamp(24px,3vw,32px);line-height:1.2;color:var(--gold)}
+.facts .note{font-size:13px;color:var(--sub);line-height:1.6;margin-top:6px}
+.f-span2{grid-column:span 2}
+@media (max-width:760px){.facts{grid-template-columns:1fr}.facts>div{grid-column:auto}}
+
+/* subthemes */
+.subs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.sub{border-top:3px solid var(--gold);padding-top:18px}
+.sub h3{margin:0;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:19px;color:var(--ink)}
+.sub p{margin:8px 0 0;color:var(--sub);font-size:14px;line-height:1.7}
+@media (max-width:760px){.subs{grid-template-columns:1fr;gap:24px}}
+
+/* two col list */
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+.list{margin:0;border-top:1px solid var(--line)}
+.list>div{display:grid;grid-template-columns:8em minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.list dt{font-weight:700;color:var(--gold)}
+.list dd{margin:0}
+@media (max-width:760px){.cols{grid-template-columns:1fr;gap:64px}.list>div{grid-template-columns:1fr;gap:2px}}
+
+/* timeline */
+.tl{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
+.tl li{position:relative;padding-top:32px}
+.tl li::before{content:"";position:absolute;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--ground);border:3px solid var(--sub)}
+.tl li.done::before{background:var(--sub);border-color:var(--sub)}
+.tl li.open::before{background:var(--gold);border-color:var(--gold)}
+.tl .d{font-weight:700;font-size:14px;color:var(--ink)}
+.tl .e{font-size:13px;line-height:1.6;color:var(--sub);margin-top:4px}
+.countdown{margin-top:32px;font-weight:700;color:var(--sub)}
+.countdown b{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:32px;color:var(--gold)}
+@media (max-width:760px){
+  .tl{grid-template-columns:1fr;gap:20px;padding-left:36px}
+  .tl::before{left:9px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .tl li{padding-top:0}
+  .tl li::before{left:-36px}
+}
+
+/* people */
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.people div{border-left:3px solid var(--gold);padding-left:18px}
+.people b{display:block;font-size:18px}
+.people span{color:var(--sub);font-size:14px;line-height:1.7}
+@media (max-width:760px){.people{grid-template-columns:1fr}}
+
+.caution{border:1px solid var(--gold-d);background:var(--paper);padding:24px 28px;max-width:48em;border-radius:4px}
+.caution h3{margin:0 0 8px;font-size:18px;color:var(--gold)}
+.caution p{margin:0 0 10px}
+.caution p:last-child{margin-bottom:0}
+
+footer{padding:80px 0 64px;font-size:14px;color:var(--sub)}
+footer h2{font-size:18px;margin-bottom:12px;font-family:inherit;font-weight:700;color:var(--gold)}
+footer ul{margin:0;padding-left:1.2em}
+footer li{margin-bottom:4px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg viewBox="0 0 1000 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="1000" height="260" fill="#1A1730"/>
+    <circle cx="150" cy="60" r="1.5" fill="#D4A828"/>
+    <circle cx="260" cy="120" r="1" fill="#D4A828"/>
+    <circle cx="420" cy="40" r="1.5" fill="#D4A828"/>
+    <circle cx="600" cy="90" r="1" fill="#D4A828"/>
+    <circle cx="740" cy="30" r="1.5" fill="#D4A828"/>
+    <circle cx="880" cy="70" r="1" fill="#D4A828"/>
+    <circle cx="950" cy="140" r="1.5" fill="#D4A828"/>
+    <circle cx="80" cy="180" r="1" fill="#D4A828"/>
+    <path d="M0 220 L 1000 220" stroke="#8A6A1E" stroke-width="1" opacity=".5"/>
+    <path d="M100 220 L 250 130 L 400 220" fill="none" stroke="#D4A828" stroke-width="2" opacity=".7"/>
+    <path d="M550 220 L 700 100 L 850 220" fill="none" stroke="#D4A828" stroke-width="2" opacity=".7"/>
+  </svg>
+  <div class="hero-text">
+    <div class="wrap">
+      <p class="kicker">Expo 2030 Riyadh・<b>登録博覧会</b></p>
+      <h1 class="disp">リヤド万博<span lang="en">Foresight for Tomorrow — あすを見通す力</span></h1>
+      <p class="theme num">会期 <b>2030.10.1–2031.3.31</b>（約6か月）。サウジアラビア・リヤド市北部で開催されます。</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>概要</h2>
+    <dl class="facts">
+      <div class="f-span2"><dt>会場</dt><dd class="big num">600万㎡</dd><dd class="note">うちゲート内区画は約200万㎡。リヤド市北部、キング・ハーリド国際空港近接</dd></div>
+      <div><dt>参加</dt><dd class="big num">135ヶ国+</dd><dd class="note">2026年8月25日時点で参加確定。国・国際機関で200以上を見込む</dd></div>
+      <div><dt>想定来場者</dt><dd class="big num">4,200万人</dd><dd class="note">2026年8月25日時点の公式発表</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>3つのサブテーマ</h2>
+    <div class="subs">
+      <div class="sub">
+        <h3 lang="en">Transformational Technology</h3>
+        <p>変革的技術。社会を変える技術をどう活かすか</p>
+      </div>
+      <div class="sub">
+        <h3 lang="en">Sustainable Solutions</h3>
+        <p>持続可能な解決策。環境と共存する仕組みづくり</p>
+      </div>
+      <div class="sub">
+        <h3 lang="en">Prosperous People</h3>
+        <p>豊かな人々。誰もが恩恵を受けられる繁栄のかたち</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>これまでと、これから</h2>
+    <ol class="tl num" id="tl">
+      <li class="done" data-date="2023-11-28"><div class="d">2023.11.28</div><div class="e">BIE総会でサウジアラビアが選出（119票）</div></li>
+      <li class="done" data-date="2025-03-07"><div class="d">2025.3.7</div><div class="e">登録用ドッシエを提出</div></li>
+      <li class="done" data-date="2025-06-17"><div class="d">2025.6.17</div><div class="e">BIE総会で正式登録認定</div></li>
+      <li class="done" data-date="2025-12-16"><div class="d">2025.12.16</div><div class="e">日本が公式参加を閣議了解</div></li>
+      <li class="done" data-date="2026-08-25"><div class="d">2026.8.25</div><div class="e">BIEとの参加国向け協定に調印</div></li>
+      <li class="open" data-date="2030-10-01"><div class="d">2030.10.1</div><div class="e">開幕</div></li>
+    </ol>
+    <p class="countdown" id="cd" hidden>開幕まで <b class="num" id="cdn"></b> 日</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap cols">
+    <div>
+      <h2>会場計画</h2>
+      <dl class="list">
+        <div><dt>敷地</dt><dd>ワディ・アッ＝スライの地形と水系を活かしたマスタープラン</dd></div>
+        <div><dt>配置</dt><dd>5つのテーマ地区に230以上のパビリオンを計画</dd></div>
+        <div><dt>暑さ対策</dt><dd>日陰を歩ける「クールルート」や節水型の植栽を採用</dd></div>
+        <div><dt>閉幕後</dt><dd>住宅・文化・商業機能を備えた「グローバル・ビレッジ」（人口約15万人規模）に転用予定</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h2>キーパーソン</h2>
+      <div class="people">
+        <div><b>タラール・アル＝マッリ</b><span>Expo 2030 Riyadh社CEO。2025年6月22日就任発表</span></div>
+        <div><b>イブラヒム・アル＝スルタン</b><span>リヤド市王立委員会CEO。登録認定式典でBIE旗を受領</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>日本の参加</h2>
+    <dl class="list">
+      <div><dt>参加決定</dt><dd>2025年12月16日、閣議了解により公式参加を決定</dd></div>
+      <div><dt>体制</dt><dd>幹事省は経済産業省、副幹事省は農林水産省・国土交通省。JETROが参加機関</dd></div>
+      <div><dt>日本館</dt><dd>具体的な計画・出展テーマは本ページ時点で未発表</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="caution">
+      <h3>数字や情報の揺れについて</h3>
+      <p>参加国数は、2025年6月17日時点の公式発表では「197ヶ国の参加を目指す」という目標値でしたが、2026年8月25日の発表では「135ヶ国以上が参加を確定」「国・国際機関で200以上を見込む」に更新されています。ここでは日付の新しい2026年8月25日時点の数字を採用しています。</p>
+      <p>想定来場者数も2025年6月時点の「4,000万人超」から、2026年8月25日時点で「4,200万人」に上方修正されています。同様に最新の数字を採用しました。</p>
+      <p>サブテーマについては、公式サイトの一部ページに5項目（Technology／Planet／Humanity／Culture／Collaboration）とする記載もありますが、更新日付の明記がないため、日付付きの2025年6月17日・2026年8月25日の発表にある3サブテーマ表記をこのページでは採用しています。</p>
+      <p>公式マスコットは2026年9月時点で未発表です。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>出典</h2>
+    <ul>
+      <li><a href="https://www.expo2030riyadh.sa/en">Expo 2030 Riyadh 公式サイト</a></li>
+      <li><a href="https://www.expo2030riyadh.sa/en/about">About（公式）</a></li>
+      <li><a href="https://www.expo2030riyadh.sa/en/expo-site">Expo Site（公式）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/2030-riyadh">Expo 2030 Riyadh（BIE）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/news-announcements/world-expo/saudi-arabia-elected-host-country-of-world-expo-2030">Saudi Arabia elected host country（BIE、2023年11月28日）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/news-announcements/world-expo/bie-general-assembly-grants-registration-to-world-expo-2030-riyadh">BIE grants registration（BIE、2025年6月17日）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/news-announcements/world-expo/bie-and-saudi-arabia-sign-expo-2030-riyadh-see-agreement">BIE and Saudi Arabia sign SEE Agreement（BIE、2026年8月25日）</a></li>
+      <li><a href="https://www.meti.go.jp/policy/exhibition/riyadh2030.html">2030年リヤド国際博覧会（経済産業省）</a></li>
+      <li><a href="https://www.meti.go.jp/press/2025/12/20251216004/20251216004.html">日本の公式参加について（経済産業省、2025年12月16日）</a></li>
+      <li><a href="https://www.spa.gov.sa/en/N2344510">CEO就任について（サウジ通信、2025年6月22日）</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var DAY=86400000;
+  var now=new Date();
+  var today=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());
+  var open=Date.UTC(2030,9,1);
+  var left=Math.round((open-today)/DAY);
+  if(left>0){
+    document.getElementById('cdn').textContent=left;
+    document.getElementById('cd').hidden=false;
+  }
+  var items=[].slice.call(document.querySelectorAll('#tl li'));
+  items.forEach(function(li){
+    var p=li.dataset.date.split('-');
+    var d=Date.UTC(+p[0],p[1]-1,+p[2]);
+    if(d<=today) li.classList.add('done');
+  });
+})();
+</script>
+</body>
+</html>

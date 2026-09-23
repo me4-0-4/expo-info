@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アフター万博2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#EFE9E2;
+  --paper:#F8F5F0;
+  --ink:#2B2320;
+  --sub:#6B5F55;
+  --red:#C6482E;
+  --gold:#B98A3E;
+  --line:#DAD1C4;
+  --rule:2px solid var(--ink);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Helvetica Neue",Arial,"BIZ UDPGothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:16px;line-height:1.85;letter-spacing:.03em;line-break:strict;overflow-wrap:anywhere;
+}
+.mincho{font-family:"Shippori Mincho",serif;font-weight:700}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--red);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:920px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+h2{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(24px,3.2vw,32px);margin:0 0 32px;line-height:1.5}
+section{padding:96px 0 0}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:var(--rule)}
+.hero svg{display:block;width:100%;height:auto}
+.hero-text .wrap{padding-top:56px;padding-bottom:56px}
+.hero .kicker{font-size:14px;letter-spacing:.12em;color:var(--sub)}
+.hero h1{margin:12px 0 0;font-size:clamp(38px,7vw,72px);line-height:1.4}
+.hero .dates{margin:20px 0 0;font-size:clamp(16px,2vw,20px);color:var(--sub)}
+.hero .dates b{color:var(--ink);font-weight:700}
+@media (max-width:640px){.hero-text .wrap{padding-top:36px;padding-bottom:40px}}
+
+/* lede */
+.lede{font-family:"Shippori Mincho",serif;font-size:clamp(19px,2.4vw,24px);line-height:2;max-width:32em;margin:0}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:var(--rule);border-left:var(--rule)}
+.facts>div{border-right:var(--rule);border-bottom:var(--rule);padding:22px 22px;background:var(--paper)}
+.facts dt{font-weight:700;font-size:14px;color:var(--sub)}
+.facts dd{margin:6px 0 0}
+.facts .big{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(26px,3.2vw,36px);line-height:1.2}
+.facts .note{font-size:13px;color:var(--sub);line-height:1.6;margin-top:6px}
+.f-span2{grid-column:span 2}
+.facts .red{background:var(--red);color:#fff}
+.facts .red dt,.facts .red .note{color:#F4D8CF}
+@media (max-width:760px){.facts{grid-template-columns:1fr}.facts>div{grid-column:auto}}
+
+/* two columns list */
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+.list{margin:0;border-top:var(--rule)}
+.list>div{display:grid;grid-template-columns:8em minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.list dt{font-weight:700;color:var(--red)}
+.list dd{margin:0}
+@media (max-width:760px){.cols{grid-template-columns:1fr;gap:64px}.list>div{grid-template-columns:1fr;gap:2px}}
+
+/* pavilions */
+.pav{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.pav li{border-top:3px solid var(--red);padding-top:16px}
+.pav b{display:block;font-family:"Shippori Mincho",serif;font-size:19px;margin-bottom:6px}
+.pav span{color:var(--sub);font-size:14px;line-height:1.7}
+@media (max-width:760px){.pav{grid-template-columns:1fr;gap:24px}}
+
+/* timeline */
+.tl{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:9px;height:4px;background:var(--ink)}
+.tl li{position:relative;padding-top:34px}
+.tl li::before{content:"";position:absolute;top:0;left:0;width:22px;height:22px;border-radius:50%;background:var(--ground);border:4px solid var(--ink)}
+.tl li.done::before{background:var(--ink)}
+.tl li.open::before{background:var(--red);border-color:var(--red)}
+.tl .d{font-weight:700;font-size:15px}
+.tl .e{font-size:13px;line-height:1.6;color:var(--sub);margin-top:4px}
+@media (max-width:760px){
+  .tl{grid-template-columns:1fr;gap:20px;padding-left:38px}
+  .tl::before{left:9px;right:auto;top:0;bottom:0;width:4px;height:auto}
+  .tl li{padding-top:0}
+  .tl li::before{left:-38px}
+}
+
+.caution{border:var(--rule);background:var(--paper);padding:24px 28px;max-width:48em}
+.caution h3{margin:0 0 8px;font-size:18px}
+.caution p{margin:0 0 10px}
+.caution p:last-child{margin-bottom:0}
+
+footer{padding:80px 0 64px;font-size:14px;color:var(--sub)}
+footer h2{font-size:18px;margin-bottom:12px;font-family:inherit;font-weight:700}
+footer ul{margin:0;padding-left:1.2em}
+footer li{margin-bottom:4px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg viewBox="0 0 1000 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#EFE9E2"/>
+        <stop offset="55%" stop-color="#E7D2BE"/>
+        <stop offset="100%" stop-color="#D89A6F"/>
+      </linearGradient>
+    </defs>
+    <rect width="1000" height="320" fill="url(#sky)"/>
+    <circle cx="820" cy="150" r="70" fill="#C6482E" opacity=".85"/>
+    <path d="M300 230 A 260 260 0 0 1 780 190" fill="none" stroke="#2B2320" stroke-width="3" opacity=".5"/>
+    <path d="M-20 280 L 1020 280" stroke="#2B2320" stroke-width="2" opacity=".3"/>
+  </svg>
+  <div class="hero-text">
+    <div class="wrap">
+      <p class="kicker">大阪・関西万博 2025 閉幕後</p>
+      <h1 class="mincho">アフター万博</h1>
+      <p class="dates num">会期 2025.4.13–10.13（184日間）。閉幕後の夢洲は、<b>いま</b>もかたちを変え続けています。</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <p class="lede">大屋根リングは一部を残し、多くのパビリオンは解体されて次の場所へ運ばれ、跡地には統合型リゾートが建設中です。会場は2028年をめどに更地へ戻り、運営した協会も役目を終えます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">閉幕の記録</h2>
+    <dl class="facts">
+      <div class="f-span2 red"><dt>来場者数</dt><dd class="big num">2,901.8万人</dd><dd class="note">一般＋関係者。2025年10月14日、協会発表（一般来場者は約2,557.9万人）</dd></div>
+      <div><dt>経済波及効果</dt><dd class="big num">3.6兆円</dd><dd class="note">経済産業省の再試算（2025年12月）</dd></div>
+      <div><dt>運営収支</dt><dd class="big num">230〜280億円</dd><dd class="note">黒字見込み（2025年10月時点の報道）</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">大屋根リング、そのゆくえ</h2>
+    <dl class="list">
+      <div><dt>方針</dt><dd>全周約2kmのうち、北東側の約200mを大阪市営公園として残す方向で2025年9月16日に関係機関が合意</dd></div>
+      <div><dt>費用</dt><dd>保存・改修と10年間の維持管理費は、扱いによって約55億円〜約90億円と幅がある試算</dd></div>
+      <div><dt>負担</dt><dd>誰がいくら負担するかは本ページ時点で未確定。万博の黒字分を充てるべきという意見も出ている</dd></div>
+      <div><dt>残りの部分</dt><dd>大部分は解体。能登の復興住宅に部材を活用する案も報じられているが、公式な確定情報は未確認</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">パビリオンは、どこへ</h2>
+    <ul class="pav">
+      <li><b>ウズベキスタン館</b><span>解体後、本国カラカルパクスタン共和国の首都ヌクスへ。教育施設として再建される計画と報じられている</span></li>
+      <li><b>ルクセンブルク館</b><span>「サーキュラー・バイ・デザイン」で設計され、基礎のコンクリートブロックなどをNESTA RESORT KOBEへ転用</span></li>
+      <li><b>クラゲ館（外観）</b><span>広島県福山市へ移設し、2029年度開館予定の科学館の屋外施設として活用予定</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">跡地と、これからの夢洲</h2>
+    <dl class="list">
+      <div><dt>マスタープラン</dt><dd>大阪府・市が2025年4月に「夢洲第2期区域マスタープランVer.1.0」を策定。コンセプトは「Smart Resort City」</dd></div>
+      <div><dt>統合型リゾート</dt><dd>夢洲で着工済み。2030年秋の開業を目標に整備が進む</dd></div>
+      <div><dt>レガシー事業</dt><dd>観光庁が万博の理念や海外ネットワークを引き継ぐ補助事業を実施。2026年度は5月13日〜6月3日に公募、7月10日に採択事業を公表</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap cols">
+    <div>
+      <h2 class="mincho">会場撤去</h2>
+      <dl class="list">
+        <div><dt>敷地返還</dt><dd>各国パビリオンは2026年4月13日をめどに解体・撤去との報道</dd></div>
+        <div><dt>更地化</dt><dd>会場全体を2028年2月末までに更地へ戻し、大阪市に返還する予定</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h2 class="mincho">協会の解散</h2>
+      <dl class="list">
+        <div><dt>解散・清算</dt><dd>2025年日本国際博覧会協会は2028年3月に解散・清算法人化の予定</dd></div>
+        <div><dt>清算支援</dt><dd>2026年5月25日、清算支援業務の最優秀提案事業者を決定。契約は2029年2月28日までを予定</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">これまでと、これから</h2>
+    <ol class="tl num" id="tl">
+      <li class="done" data-date="2025-10-13"><div class="d">2025.10.13</div><div class="e">閉幕</div></li>
+      <li class="done" data-date="2025-10-14"><div class="d">2025.10.14</div><div class="e">来場者数を協会が発表</div></li>
+      <li class="done" data-date="2026-04-13"><div class="d">2026.4</div><div class="e">パビリオン解体・敷地返還のめど（報道）</div></li>
+      <li class="done" data-date="2026-06-16"><div class="d">2026.6.16</div><div class="e">経産省が理念継承・レガシー報告書を公表</div></li>
+      <li data-date="2028-02-28"><div class="d">2028.2</div><div class="e">会場を更地化し大阪市へ返還予定</div></li>
+      <li class="open" data-date="2028-03-01"><div class="d">2028.3</div><div class="e">万博協会が解散・清算法人化予定</div></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="caution">
+      <h3>数字や情報の揺れについて</h3>
+      <p>経済波及効果は、経済産業省の再試算が3.6兆円（2025年12月）、大阪府の試算が約3.1兆円です。算出の主体と手法が異なるため単純比較はできませんが、国レベルの最新の公式集計としては経産省の3.6兆円を採っています。</p>
+      <p>大屋根リングの保存費用・負担割合、パビリオンの移設先の詳細、会場撤去の正確なスケジュールは、共同通信・時事通信・日本経済新聞などの報道をもとにしており、公式サイトの一次発表文書そのものを確認できていない項目が含まれます（2026年9月時点）。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>出典</h2>
+    <ul>
+      <li><a href="https://www.expo2025.or.jp/news/news-20251014-01/">来場者数と入場チケット販売数について（EXPO2025公式、2025年10月14日）</a></li>
+      <li><a href="https://www.expo2025.or.jp/news/news-20260330-03/">解散・清算支援業務 最優秀提案事業者決定について（EXPO2025公式）</a></li>
+      <li><a href="https://www.meti.go.jp/shingikai/mono_info_service/results_verification/pdf/001_04_00.pdf">大阪・関西万博の開催実績及び成果の整理（案）（経済産業省）</a></li>
+      <li><a href="https://www.meti.go.jp/press/2026/06/20260616002/20260616002.html">大阪・関西万博 理念継承とレガシーの発展に向けて（経済産業省、2026年6月16日）</a></li>
+      <li><a href="https://www.pref.osaka.lg.jp/documents/125075/09_siryo4.pdf">大阪・関西万博による大阪経済等への影響（大阪府）</a></li>
+      <li><a href="https://www.cas.go.jp/jp/seisaku/expo_suisin_honbu/index.html">国際博覧会推進本部（内閣官房）</a></li>
+      <li><a href="https://www.mlit.go.jp/kankocho/content/002000286.pdf">万博レガシー事業 公募要領（観光庁）</a></li>
+      <li><a href="https://banpaku-legacy.go.jp/">万博レガシー事業（観光庁）</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('#tl li'));
+  var now=new Date();
+  var today=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());
+  items.forEach(function(li){
+    var p=li.dataset.date.split('-');
+    var d=Date.UTC(+p[0],p[1]-1,+p[2]);
+    if(d<=today) li.classList.add('done');
+  });
+})();
+</script>
+</body>
+</html>

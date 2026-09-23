@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ベオグラード万博2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#D6D3CC;
+  --paper:#E6E3DC;
+  --ink:#15161A;
+  --sub:#45464C;
+  --blue:#1646B8;
+  --coral:#FF6B7A;
+  --rule:3px solid var(--ink);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Helvetica Neue",Arial,"BIZ UDPGothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:16px;line-height:1.8;letter-spacing:.03em;
+  line-break:strict;overflow-wrap:anywhere;
+}
+.display{font-family:"Dela Gothic One","BIZ UDPGothic",sans-serif;font-weight:400;letter-spacing:0;font-feature-settings:"palt" 1;line-height:1.15}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--blue);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:var(--rule)}
+.hero svg{display:block;width:100%;height:auto}
+.hero-text{position:static}
+.hero-text .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.hero h1{margin:0;font-size:clamp(40px,7.4vw,92px)}
+.hero h1 .yr{display:block;color:var(--blue);font-size:1.35em;line-height:1}
+.hero .dates{font-size:clamp(18px,2.4vw,28px);text-align:right;line-height:1.4}
+.hero .dates b{display:block;font-family:"Dela Gothic One",sans-serif;font-weight:400;font-size:1.4em}
+.script{position:absolute;top:28px;left:32px;font-family:"Dela Gothic One",sans-serif;font-size:clamp(14px,1.8vw,20px);line-height:1.3;letter-spacing:.08em}
+@media (max-width:640px){
+  .hero-text .wrap{padding-top:24px;padding-bottom:32px}
+  .hero .dates{text-align:left}
+  .script{left:16px;top:12px}
+}
+
+/* theme band */
+.theme{background:var(--ink);color:var(--paper);padding:40px 0}
+.theme p{margin:0}
+.theme .en{font-family:"Dela Gothic One",sans-serif;font-size:clamp(22px,3.2vw,38px);line-height:1.25}
+.theme .ja{margin-top:8px;color:#C9C6BF}
+
+section{padding:88px 0 0}
+h2{margin:0 0 28px;font-size:clamp(26px,3.4vw,36px)}
+
+/* facts table */
+.facts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:var(--rule);border-left:var(--rule)}
+.facts>div{border-right:var(--rule);border-bottom:var(--rule);padding:20px 22px;background:var(--paper)}
+.facts dt{font-weight:700;font-size:14px;color:var(--sub)}
+.facts dd{margin:4px 0 0}
+.facts .big{font-family:"Dela Gothic One",sans-serif;font-size:clamp(28px,3.6vw,44px);line-height:1.15}
+.facts .note{font-size:14px;color:var(--sub);line-height:1.6;margin-top:6px}
+.f-span3{grid-column:span 3}.f-span2{grid-column:span 2}.f-span4{grid-column:span 4}
+.facts .blue{background:var(--blue);color:#fff}
+.facts .blue dt,.facts .blue .note{color:#D8E0F5}
+@media (max-width:760px){.facts{grid-template-columns:1fr}.facts>div{grid-column:auto}}
+
+/* subthemes */
+.subs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.sub svg{width:72px;height:72px;display:block;margin-bottom:16px}
+.sub h3{margin:0;font-family:"Dela Gothic One",sans-serif;font-weight:400;font-size:22px;line-height:1.3}
+.sub p{margin:6px 0 0;color:var(--sub)}
+@media (max-width:760px){.subs{grid-template-columns:1fr;gap:28px}}
+
+/* timeline */
+.tl{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:9px;height:6px;background:var(--ink)}
+.tl li{position:relative;padding-top:36px}
+.tl li::before{content:"";position:absolute;top:0;left:0;width:24px;height:24px;border-radius:50%;background:var(--ground);border:5px solid var(--ink)}
+.tl li.done::before{background:var(--ink)}
+.tl li.open::before{background:var(--blue);border-color:var(--blue)}
+.tl .d{font-family:"Dela Gothic One",sans-serif;font-size:18px;line-height:1.3}
+.tl .e{font-size:14px;line-height:1.6;color:var(--sub);margin-top:4px}
+.now{position:absolute;top:-6px;width:4px;height:36px;background:var(--coral)}
+.now span{position:absolute;top:-30px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--coral);color:var(--ink);font-weight:700;font-size:13px;padding:0 8px;line-height:24px}
+@media (max-width:760px){
+  .tl{grid-template-columns:1fr;gap:20px;padding-left:40px}
+  .tl::before{left:9px;right:auto;top:0;bottom:0;width:6px;height:auto}
+  .tl li{padding-top:0}
+  .tl li::before{left:-40px}
+  .now{display:none}
+}
+.countdown{margin-top:28px;font-weight:700}
+.countdown b{font-family:"Dela Gothic One",sans-serif;font-weight:400;font-size:28px;color:var(--blue)}
+
+/* two columns */
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+.list{margin:0;border-top:var(--rule)}
+.list>div{display:grid;grid-template-columns:8em minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--ink)}
+.list dt{font-weight:700}
+.list dd{margin:0}
+.tbd{background:var(--coral);padding:0 6px;font-weight:700}
+@media (max-width:760px){.cols{grid-template-columns:1fr;gap:64px}.list>div{grid-template-columns:1fr;gap:2px}}
+
+/* japan */
+.japan{margin-top:88px;background:var(--blue);color:#fff;padding:72px 0 80px;position:relative;overflow:hidden}
+.japan::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:#fff;opacity:.95}
+.japan .wrap{position:relative;z-index:1}
+.japan h2{color:#fff}
+.japan .motto{font-family:"Dela Gothic One",sans-serif;font-size:clamp(28px,4.4vw,52px);line-height:1.3;margin:0 0 24px;max-width:14em}
+.japan p{max-width:38em;margin:0;color:#E4E9F7}
+.japan .list{border-top-color:#fff;margin-top:40px}
+.japan .list>div{border-bottom-color:#9FB2E3}
+.japan .people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:40px}
+.japan .people div{border-left:6px solid var(--coral);padding-left:18px}
+.japan .people b{display:block;font-size:20px}
+.japan .people span{color:#E4E9F7;font-size:15px;line-height:1.7}
+@media (max-width:760px){.japan .people{grid-template-columns:1fr}.japan::after{width:200px;height:200px;right:-80px;top:-80px}}
+
+.caution{border:var(--rule);background:var(--paper);padding:24px 28px;max-width:46em}
+.caution h3{margin:0 0 6px;font-size:18px}
+.caution p{margin:0}
+
+footer{padding:72px 0 64px;font-size:14px;color:var(--sub)}
+footer h2{font-size:18px;margin-bottom:12px;font-family:inherit;font-weight:700}
+footer ul{margin:0;padding-left:1.2em}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="1000" height="400" fill="#D6D3CC"/>
+    <circle cx="770" cy="170" r="150" fill="#1646B8"/>
+    <path d="M-20 90 C 240 90, 380 222, 600 230 L 1020 230" fill="none" stroke="#FF6B7A" stroke-width="40"/>
+    <path d="M-20 370 C 250 370, 390 282, 600 280 L 1020 280" fill="none" stroke="#15161A" stroke-width="60"/>
+  </svg>
+  <div class="script" lang="sr">БЕОГРАД<br>BEOGRAD</div>
+  <div class="hero-text">
+    <div class="wrap">
+      <h1 class="display">ベオグラード万博<span class="yr num">2027</span></h1>
+      <p class="dates num">会期93日間<b>5.15–8.15</b></p>
+    </div>
+  </div>
+</header>
+
+<div class="theme">
+  <div class="wrap">
+    <p class="en" lang="en">Play for Humanity – Sport and Music for All</p>
+    <p class="ja">人類のための遊び：すべての人にスポーツと音楽を</p>
+  </div>
+</div>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2 class="display">概要</h2>
+    <dl class="facts">
+      <div class="f-span4"><dt>区分</dt><dd class="big">BIE認定博覧会</dd><dd class="note">西バルカン初の万博</dd></div>
+      <div class="f-span2 blue"><dt>参加</dt><dd class="big num">140+</dd><dd class="note">国・国際機関（公式サイト）</dd></div>
+      <div class="f-span2"><dt>会場</dt><dd class="big num">25ha</dd><dd class="note">スルチン地区。周辺開発は約150ha</dd></div>
+      <div class="f-span2"><dt>想定来場者</dt><dd class="big num">400万人+</dd><dd class="note">主催者の目標は600万人</dd></div>
+      <div class="f-span2"><dt>予定イベント</dt><dd class="big num">約8,000</dd><dd class="note">文化、ビジネス、教育、スポーツ</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="display">サブテーマ</h2>
+    <div class="subs">
+      <div class="sub">
+        <svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="#1646B8"/></svg>
+        <h3 lang="en">Power of Play</h3>
+        <p>遊びの力。癒しと持続可能性</p>
+      </div>
+      <div class="sub">
+        <svg viewBox="0 0 72 72" aria-hidden="true"><polygon points="36,2 70,70 2,70" fill="#FF6B7A"/></svg>
+        <h3 lang="en">Play for Progress</h3>
+        <p>進歩のための遊び。イノベーションと想像力</p>
+      </div>
+      <div class="sub">
+        <svg viewBox="0 0 72 72" aria-hidden="true"><rect x="2" y="2" width="68" height="68" fill="#15161A"/></svg>
+        <h3 lang="en">Play Together</h3>
+        <p>ともに遊ぶ。つながり、平和、インクルージョン</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="display">これまでと、これから</h2>
+    <ol class="tl num" id="tl">
+      <li class="done" data-date="2023-06-21"><div class="d">2023.6.21</div><div class="e">BIE総会で開催国に選出</div></li>
+      <li class="done" data-date="2024-02-01"><div class="d">2024.2</div><div class="e">認定申請書を提出</div></li>
+      <li class="done" data-date="2024-11-25"><div class="d">2024.11.25</div><div class="e">BIE総会で正式認定</div></li>
+      <li class="done" data-date="2026-03-10"><div class="d">2026.3</div><div class="e">国際参加者会議</div></li>
+      <li class="done" data-date="2026-05-15"><div class="d">2026.5.15</div><div class="e">ボランティア募集開始</div></li>
+      <li data-date="2026-12-01"><div class="d">2026.12</div><div class="e">パビリオン引き渡し予定</div></li>
+      <li class="open" data-date="2027-05-15"><div class="d">2027.5.15</div><div class="e">開幕</div></li>
+    </ol>
+    <p class="countdown" id="cd" hidden>開幕まで <b class="num" id="cdn"></b> 日</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap cols">
+    <div>
+      <h2 class="display">会場</h2>
+      <dl class="list">
+        <div><dt>場所</dt><dd>サヴァ川とノヴィ・ベオグラードの間、スルチン地区</dd></div>
+        <div><dt>配置</dt><dd>国際パビリオン、テーマゾーン、企業／ベストプラクティスエリアを中央の遊歩道がつなぐ</dd></div>
+        <div><dt>建設</dt><dd>会場はすべて主催者が建設。参加国は区画を借りる方式</dd></div>
+        <div><dt>周辺施設</dt><dd>新国立競技場（52,000席）、アクアティクスセンター、Expo Village</dd></div>
+        <div><dt>閉幕後</dt><dd>見本市会場、EXPO博物館、国際オーディトリアム、学校、住宅、ホテルなどに転用</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h2 class="display">運営と顔ぶれ</h2>
+      <dl class="list">
+        <div><dt>マスコット</dt><dd>ラストコとミリツァ。2025年に一般投票で決定</dd></div>
+        <div><dt>ロゴ</dt><dd>サシャ・ヴィダコヴィッチ作。サヴァ川とドナウ川がモチーフ</dd></div>
+        <div><dt>アンバサダー</dt><dd>ウサイン・ボルト、ジャッキー・チェン、リン・ダン</dd></div>
+        <div><dt>公演予告</dt><dd>エロス・ラマゾッティ、レニー・クラヴィッツ、ディープ・パープル、シルク・ドゥ・ソレイユ</dd></div>
+        <div><dt>ボランティア</dt><dd>Expo Playmakers。2万人以上、48職種、最低15日、2027年4月15日時点で18歳以上</dd></div>
+        <div><dt>チケット</dt><dd><span class="tbd">未発表</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="japan" aria-labelledby="jp">
+  <div class="wrap">
+    <h2 class="display" id="jp">日本館</h2>
+    <p class="motto">ともにあそび<br>つながる<br>日本のあそび心</p>
+    <p>大阪・関西万博の「多様でありながら、ひとつ」を引き継ぎ、「あそぶことは、つながること」を軸にした展示です。</p>
+    <dl class="list">
+      <div><dt>体制</dt><dd>幹事省は経済産業省、協力は文部科学省、運営はJETRO</dd></div>
+      <div><dt>2025.10</dt><dd>日本館基本計画を策定</dd></div>
+      <div><dt>2026.5.15</dt><dd>ロゴ・シンボルマークを決定</dd></div>
+      <div><dt>2026.6.10</dt><dd>公式参加契約に署名（吉村佐知子政府代表）</dd></div>
+    </dl>
+    <div class="people">
+      <div><b>志村健一</b><span>PRアンバサダー。指揮者。セルビア交響楽団の首席客演指揮者に就任予定</span></div>
+      <div><b>中島さち子</b><span>PRアンバサダー。音楽家、数学者、STEAM教育者。大阪・関西万博「クラゲ館」のプロデューサー</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="caution">
+      <h3>数字は資料によって異なります</h3>
+      <p>来場者数は、BIEと公式サイトが400万人以上、主催者の記事が600万人、2023年のセルビア政府発表が300万人超としています。参加数も130以上、139か国、140以上と幅があります。ここでは公式サイトの最新の表記を採用しています（2026年9月時点）。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>出典</h2>
+    <ul>
+      <li><a href="https://expobelgrade2027.org/en/about/expo-2027">About Expo 2027（EXPO 2027 Belgrade 公式）</a></li>
+      <li><a href="https://expobelgrade2027.org/en/participants">Participants（公式）</a></li>
+      <li><a href="https://expobelgrade2027.org/en/experience/programme">Programme（公式）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/2027-belgrade?view=bieexpo&amp;layout=bieparis%3Aexpo">Expo 2027 Belgrade（BIE）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/news-announcements/specialised-expo/international-participants-intensify-efforts-ahead-of-specialised-expo-2027-belgrade">International Participants intensify efforts（BIE）</a></li>
+      <li><a href="https://www.srbija.gov.rs/vest/en/209178/expo-complex-biggest-construction-project-in-this-part-of-europe.php">EXPO complex biggest construction project（セルビア政府）</a></li>
+      <li><a href="https://www.jetro.go.jp/news/releases/2025/f597a283e9b9ca9f.html">日本館基本計画の策定（JETRO）</a></li>
+      <li><a href="https://www.jetro.go.jp/news/releases/2026/9afe66b3f31c13e0.html">公式参加契約署名とPRアンバサダー（JETRO）</a></li>
+      <li><a href="https://www.meti.go.jp/press/2026/05/20260515002/20260515002.html">日本館ロゴ・シンボルマーク決定（経済産業省）</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var DAY=86400000;
+  var now=new Date();
+  var today=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());
+  var open=Date.UTC(2027,4,15);
+  var left=Math.round((open-today)/DAY);
+  if(left>0){
+    document.getElementById('cdn').textContent=left;
+    document.getElementById('cd').hidden=false;
+  }
+  var items=[].slice.call(document.querySelectorAll('#tl li'));
+  var dates=items.map(function(li){var p=li.dataset.date.split('-');return Date.UTC(+p[0],p[1]-1,+p[2]);});
+  items.forEach(function(li,i){ if(dates[i]<=today) li.classList.add('done'); });
+  for(var i=0;i<items.length-1;i++){
+    if(today>=dates[i]&&today<dates[i+1]){
+      var a=items[i],b=items[i+1];
+      var t=(today-dates[i])/(dates[i+1]-dates[i]);
+      var x=a.offsetLeft+(b.offsetLeft-a.offsetLeft)*t+10;
+      var m=document.createElement('div');
+      m.className='now';m.style.left=x+'px';
+      m.innerHTML='<span>今日</span>';
+      document.getElementById('tl').appendChild(m);
+      break;
+    }
+  }
+})();
+</script>
+</body>
+</html>
