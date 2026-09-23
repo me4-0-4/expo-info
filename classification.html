@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>博覧会の区分ガイド</title>
+<meta property="og:title" content="博覧会の区分ガイド｜EXPOインフォ">
+<meta property="og:description" content="BIE（博覧会国際事務局）の登録博・認定博と、AIPH（国際園芸家協会）のA1〜Dの4区分の違いを解説。二重認定の仕組みや開催間隔のルールもまとめました。">
+<meta property="og:type" content="website">
+<meta name="description" content="BIE（博覧会国際事務局）の登録博・認定博と、AIPH（国際園芸家協会）のA1〜Dの4区分の違いを解説。二重認定の仕組みや開催間隔のルールもまとめました。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#FAF7F0;
+  --paper:#FFFFFF;
+  --ink:#1E1E1C;
+  --sub:#6B6660;
+  --red:#A8332B;
+  --line:#DDD5C7;
+  --rule:2px solid var(--ink);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Helvetica Neue",Arial,"BIZ UDPGothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:16px;line-height:1.85;letter-spacing:.03em;line-break:strict;overflow-wrap:anywhere;
+}
+.mincho{font-family:"Shippori Mincho",serif;font-weight:700}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--red);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+h2{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(24px,3.2vw,32px);margin:0 0 32px;line-height:1.5}
+section{padding:96px 0 0}
+
+/* hero */
+.hero{border-bottom:var(--rule);background:var(--paper)}
+.hero .wrap{padding-top:64px;padding-bottom:56px}
+.hero .kicker{font-size:14px;letter-spacing:.12em;color:var(--sub)}
+.hero h1{margin:14px 0 0;font-size:clamp(32px,5.6vw,54px);line-height:1.4}
+.hero p.lede{margin:24px 0 0;font-size:clamp(16px,1.9vw,18px);color:var(--sub);max-width:34em}
+
+/* seal card */
+.seals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.seal{position:relative;border:1px solid var(--line);background:var(--paper);padding:28px 26px;border-radius:2px}
+.seal .badge{position:absolute;top:24px;right:24px;width:64px;height:64px;border-radius:50%;border:3px solid var(--red);display:flex;align-items:center;justify-content:center;color:var(--red);font-family:"Shippori Mincho",serif;font-weight:700;font-size:15px;text-align:center;line-height:1.2;transform:rotate(-8deg)}
+.seal h3{margin:0 44px 12px 0;font-family:"Shippori Mincho",serif;font-weight:700;font-size:21px}
+.seal dl{margin:16px 0 0;border-top:1px solid var(--line)}
+.seal dl>div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.seal dt{font-weight:700;color:var(--sub)}
+.seal dd{margin:0}
+.seal .src{display:block;margin-top:14px;font-size:12px;color:var(--sub)}
+.seal .pages{display:block;margin-top:8px;font-size:13px}
+.seal .pages b{font-weight:700;color:var(--ink)}
+@media (max-width:760px){.seals{grid-template-columns:1fr}}
+
+/* small seals row for AIPH */
+.grades{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.grade{border:1px solid var(--line);background:var(--paper);padding:20px 18px;text-align:left}
+.grade .g{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);font-family:"Shippori Mincho",serif;font-weight:700;font-size:16px;margin-bottom:12px}
+.grade.on .g{border-color:var(--red);color:var(--red)}
+.grade h4{margin:0 0 8px;font-size:15px}
+.grade p{margin:0;font-size:13px;color:var(--sub);line-height:1.7}
+.grade .bie{margin-top:10px;font-size:12px;font-weight:700;padding:3px 8px;display:inline-block;border-radius:2px}
+.grade.on .bie{background:var(--red);color:#fff}
+.grade:not(.on) .bie{background:var(--line);color:var(--sub)}
+.grade .src{display:block;margin-top:12px;font-size:11px;color:var(--sub)}
+.grade .pages{display:block;margin-top:8px;font-size:12px}
+@media (max-width:760px){.grades{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+
+/* diagram */
+.flow{display:flex;align-items:center;gap:0;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.flow .step{border:var(--rule);background:var(--paper);padding:18px 22px;text-align:center;min-width:160px}
+.flow .step b{display:block;font-family:"Shippori Mincho",serif;font-size:17px}
+.flow .step span{display:block;margin-top:4px;font-size:13px;color:var(--sub)}
+.flow .arrow{font-size:28px;color:var(--red);padding:0 18px}
+@media (max-width:640px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);padding:8px 0}}
+
+/* examples table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;background:var(--paper)}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:14px;vertical-align:top}
+thead th{font-size:13px;color:var(--sub);font-weight:700;background:var(--ground)}
+tbody tr:last-child td{border-bottom:0}
+td a{white-space:nowrap}
+
+.caution{border:var(--rule);background:var(--paper);padding:24px 28px;max-width:52em}
+.caution h3{margin:0 0 8px;font-size:18px}
+.caution p{margin:0 0 10px}
+.caution p:last-child{margin-bottom:0}
+
+footer{padding:80px 0 64px;font-size:14px;color:var(--sub)}
+footer h2{font-size:18px;margin-bottom:12px;font-family:inherit;font-weight:700}
+footer ul{margin:0;padding-left:1.2em}
+footer li{margin-bottom:4px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<p style="margin:0;padding:16px 32px 0;font-size:14px"><a href="index.html" style="color:var(--sub)">← Expoインフォ トップ</a></p>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">博覧会の区分ガイド</p>
+    <h1 class="mincho">「登録博」「認定博」「A1」って、何が違うの？</h1>
+    <p class="lede">国際博覧会には、BIE（博覧会国際事務局）とAIPH（国際園芸家協会）という2つの国際組織が関わる、二重の認定の仕組みがあります。ここでは、その違いをまとめました。</p>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2 class="mincho">BIEの2区分</h2>
+    <div class="seals">
+      <div class="seal">
+        <div class="badge">登録<br>REG</div>
+        <h3>登録博<span style="font-weight:400;font-size:13px;color:var(--sub);display:block">World Expo／International Registered Exhibition</span></h3>
+        <dl>
+          <div><dt>趣旨</dt><dd>普遍的なテーマの下、人類共通の課題に取り組む地球規模の集い</dd></div>
+          <div><dt>会期・規模</dt><dd>Specialised Expoより長期・大規模。上限の定めは緩やか</dd></div>
+          <div><dt>パビリオン</dt><dd>参加国がそれぞれ独自に建設できる</dd></div>
+          <div><dt>開催間隔</dt><dd>1995年以降、World Expo同士は最低5年間隔</dd></div>
+          <div><dt>申請時期</dt><dd>開催の6〜9年前</dd></div>
+        </dl>
+        <p class="pages">掲載ページ：<a href="osaka-kansai-expo-2025.html">大阪・関西万博2025</a>／<a href="riyadh-expo-2030.html">リヤド国際博覧会2030</a></p>
+        <a class="src" href="https://www.bie-paris.org/site/en/about-world-expos" target="_blank" rel="noopener noreferrer">出典：About World Expos（BIE公式）</a>
+      </div>
+      <div class="seal">
+        <div class="badge">認定<br>REC</div>
+        <h3>認定博<span style="font-weight:400;font-size:13px;color:var(--sub);display:block">Specialised Expo／International Recognised Exhibition</span></h3>
+        <dl>
+          <div><dt>趣旨</dt><dd>人類が直面する特定の課題に応えるテーマ型の博覧会</dd></div>
+          <div><dt>会期・規模</dt><dd>会期上限3か月、会場面積上限25ha</dd></div>
+          <div><dt>パビリオン</dt><dd>主催者が会場を建設し、参加国はスペースを借りてカスタマイズ</dd></div>
+          <div><dt>開催間隔</dt><dd>同一国内でのWorld/Specialised Expoは最低15年間隔、との情報がありますが、BIE公式サイトの本文中で該当箇所を確認できておらず要確認です（下記コラム参照）</dd></div>
+          <div><dt>申請時期</dt><dd>開催の5〜6年前</dd></div>
+        </dl>
+        <p class="pages">掲載ページ：<a href="belgrade-expo-2027.html">ベオグラード国際博覧会2027</a>／<a href="green-expo-2027.html">GREEN×EXPO 2027</a></p>
+        <a class="src" href="https://bie-paris.org/site/en/expos/specialised-expos/about-specialised-expos" target="_blank" rel="noopener noreferrer">出典：About Specialised Expos（BIE公式）</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">AIPHの4区分（園芸博）</h2>
+    <p style="margin:-12px 0 28px;color:var(--sub)">園芸博（花や緑がテーマの博覧会）は、AIPHが規模に応じて4段階に区分しています。BIE認定が必要なのはA1だけです。</p>
+    <div class="grades">
+      <div class="grade on"><span class="g">A1</span><h4>大規模国際園芸博</h4><p>会期3〜6か月／最低50ha（建物は10%まで）／最低10か国参加</p><span class="bie">BIE認定 必須</span><p class="pages"><a href="green-expo-2027.html">GREEN×EXPO 2027</a><br><a href="korat-expo-2029.html">コラート国際園芸博覧会2029</a><br><a href="minnesota-expo-2031.html">ミネソタ国際園芸博覧会2031</a></p></div>
+      <div class="grade"><span class="g">B</span><h4>グリーン博</h4><p>会期3〜6か月／最低25ha／最低10の国際参加者</p><span class="bie">BIE認定 不要</span><p class="pages"><a href="udonthani-expo-2026.html">ウドンターニー国際園芸博覧会2026</a><br><a href="ulsan-expo-2028.html">蔚山国際庭園博覧会2028</a><br><a href="baghdad-expo-2029.html">バグダッド国際緑化博覧会2029</a></p></div>
+      <div class="grade"><span class="g">C</span><h4>園芸ショー</h4><p>会期4〜20日／最低6,000㎡／最低6の国際参加者</p><span class="bie">BIE認定 不要</span><p class="pages" style="color:var(--sub)">該当ページなし</p></div>
+      <div class="grade"><span class="g">D</span><h4>園芸見本市</h4><p>会期の定めなし／参加者の60%以上が園芸生産・供給関連</p><span class="bie">BIE認定 不要</span><p class="pages" style="color:var(--sub)">該当ページなし</p></div>
+    </div>
+    <p style="margin:20px 0 0;font-size:12px;color:var(--sub)"><a href="https://aiph.org/expos/categories/" target="_blank" rel="noopener noreferrer">出典：AIPH Approved Expo Categories（AIPH公式）</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">もう一つの枠：トリエンナーレ・ミラノ</h2>
+    <p style="margin:0;color:var(--sub);max-width:40em">BIEには、登録博・認定博とは別に「トリエンナーレ・ミラノ（ミラノ・トリエンナーレ）」という第3の枠があります。これは1928年のパリ条約第4条で、装飾美術・近代建築の国際展として個別に名指しされた歴史的な例外で、一般的な申請・審査の手続きを経る登録博・認定博とは性格が異なります。直近の第24回（2025年5月13日〜11月9日、テーマ「Inequalities」）もBIE総会の承認を受けて開催されており、現在もBIEとの関係は続いています。2026年以降の開催予定は、本ページ時点で公式発表を確認できていません。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">二段階の「合格印」</h2>
+    <p style="margin:-12px 0 28px;color:var(--sub)">A1クラスの園芸博だけが、AIPHの承認のあとにBIEの認定を受け、はじめて「国際博覧会」を名乗れます。この仕組みは、BIEを設立した1928年のパリ条約（第4条B項2）に基づいています。</p>
+    <div class="flow">
+      <div class="step"><b>AIPHが承認</b><span>A1クラスとして加盟国が承認</span></div>
+      <div class="arrow">→</div>
+      <div class="step"><b>BIEが認定</b><span>Specialised Expoとして正式認定</span></div>
+      <div class="arrow">→</div>
+      <div class="step"><b class="mincho" style="color:var(--red)">国際博覧会</b><span>ここで初めて名乗れる</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="mincho">このサイトで扱う博覧会の区分</h2>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>開催日</th><th>名称</th><th>区分</th><th>状況（2026年9月時点）</th></tr></thead>
+        <tbody>
+          <tr><td class="num">2025.4.13</td><td><a href="osaka-kansai-expo-2025.html">大阪・関西万博2025</a></td><td>BIE 登録博</td><td>開催済（2025年10月13日閉幕）</td></tr>
+          <tr><td class="num">2026.11.1</td><td><a href="udonthani-expo-2026.html">ウドンターニー国際園芸博覧会2026</a></td><td>AIPH B</td><td>2022年3月にAIPH承認。区分上、BIE認定は不要</td></tr>
+          <tr><td class="num">2027.3.19</td><td><a href="green-expo-2027.html">GREEN×EXPO 2027</a></td><td>AIPH A1</td><td>2022年、第171回BIE総会でBIE認定も取得済み</td></tr>
+          <tr><td class="num">2027.5.15</td><td><a href="belgrade-expo-2027.html">ベオグラード国際博覧会2027</a></td><td>BIE 認定博</td><td>2024年11月、第175回BIE総会で正式認定</td></tr>
+          <tr><td class="num">2028.4.22</td><td><a href="ulsan-expo-2028.html">蔚山国際庭園博覧会2028</a></td><td>AIPH B</td><td>2024年9月にAIPH承認。区分上、BIE認定は不要</td></tr>
+          <tr><td class="num">2029.10.1</td><td><a href="baghdad-expo-2029.html">バグダッド国際緑化博覧会2029</a></td><td>AIPH B</td><td>2025年9月にAIPH承認。区分上、BIE認定は不要</td></tr>
+          <tr><td class="num">2029.11.10</td><td><a href="korat-expo-2029.html">コラート国際園芸博覧会2029</a></td><td>AIPH A1</td><td>AIPH承認済み。2026年2月にBIE認定を申請、会場変更に伴い10月に手続きを更新予定で未完了</td></tr>
+          <tr><td class="num">2030.10.1</td><td><a href="riyadh-expo-2030.html">リヤド国際博覧会2030</a></td><td>BIE 登録博</td><td>2025年6月、第176回BIE総会で正式登録</td></tr>
+          <tr><td class="num">2031.5.1</td><td><a href="minnesota-expo-2031.html">ミネソタ国際園芸博覧会2031</a></td><td>AIPH A1</td><td>AIPH暫定承認済み。BIE認定は今後求めていく段階</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin:20px 0 0;font-size:13px;color:var(--sub)">大阪・関西万博（2025年・BIE登録博）の会期上限・面積上限は登録博の枠組みによるもので、2年後に開催されるGREEN×EXPO 2027はAIPH A1クラス（会期3〜6か月・最低50ha）という別の枠で、認定博の会期上限3か月・面積上限25haの対象外です。ただし本ページ上部の「同一国内15年間隔」という情報が事実だとすると、同じ日本国内でこの2つのBIE認定イベントが2年しか空かずに開催されることになり、整合性を確認できていません。この間隔ルール自体の出典をBIE公式サイト本文で確認できていないため、上のセルでは「要確認」としています。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="caution">
+      <h3>情報の食い違い・見落としのチェックについて</h3>
+      <p>ウィキペディア日本語版の「国際園芸博覧会」記事には、A1クラスの候補として「ウッチ（ポーランド）2029」という記載がありますが、これは2018年頃にウッチ市がBIE・AIPHに示した誘致の意向にとどまり、2029年のA1開催枠は最終的にタイ・コラートに決定しています。ウッチでの開催は実現していないため、このサイトのリストには含めていません。</p>
+      <p>2028年蔚山（韓国）・2029年バグダッド（イラク）のBクラス園芸博はこのサイトでも個別ページを設けています。このほか複数のCクラス園芸ショーの計画も確認しましたが、区分上BIE認定を必要としない小規模な展示会のため、このサイトでは個別に扱っていません。</p>
+      <p>BIE公式サイト（bie-paris.org）の一部ページは自動取得ができず、検索結果や引用記事経由で確認した情報が含まれます。最新情報は必ず公式サイトでご確認ください。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 20px;font-size:13px;color:var(--sub)">確認日：2026.9.23</p>
+    <h2>出典</h2>
+    <ul>
+      <li><a href="https://www.bie-paris.org/site/en/about-world-expos" target="_blank" rel="noopener noreferrer">About World Expos（BIE公式）</a></li>
+      <li><a href="https://bie-paris.org/site/en/expos/specialised-expos/about-specialised-expos" target="_blank" rel="noopener noreferrer">About Specialised Expos（BIE公式）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/expos/about-expos/how-to-organize-an-expo" target="_blank" rel="noopener noreferrer">How is an Expo Organised?（BIE公式）</a></li>
+      <li><a href="https://aiph.org/expos/categories/" target="_blank" rel="noopener noreferrer">AIPH Approved Expo Categories（AIPH公式）</a></li>
+      <li><a href="https://aiph.org/expos/regulations/" target="_blank" rel="noopener noreferrer">AIPH Expo Regulations（AIPH公式）</a></li>
+      <li><a href="https://aiph.org/expos/calendar/" target="_blank" rel="noopener noreferrer">AIPH Expo Calendar（AIPH公式）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/expos/triennale-di-milano/about-triennale-di-milano" target="_blank" rel="noopener noreferrer">About the Triennale Milano（BIE公式）</a></li>
+      <li><a href="https://ja.wikipedia.org/wiki/国際園芸博覧会" target="_blank" rel="noopener noreferrer">国際園芸博覧会（ウィキペディア日本語版、参考）</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
