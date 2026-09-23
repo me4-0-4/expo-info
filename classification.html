@@ -28,14 +28,14 @@ body{
   font-family:"Helvetica Neue",Arial,"BIZ UDPGothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
   font-size:16px;line-height:1.85;letter-spacing:.03em;line-break:strict;overflow-wrap:anywhere;
 }
-.mincho{font-family:"Shippori Mincho",serif;font-weight:700}
+.mincho{font-family:"Shippori Mincho","Hiragino Kaku Gothic ProN",Meiryo,serif;font-weight:700}
 .num{font-variant-numeric:tabular-nums}
 a{color:var(--red);text-underline-offset:3px}
 a:hover{color:var(--ink)}
 a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 .wrap{max-width:960px;margin:0 auto;padding:0 32px}
 @media (max-width:640px){.wrap{padding:0 16px}}
-h2{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(24px,3.2vw,32px);margin:0 0 32px;line-height:1.5}
+h2{font-family:"Shippori Mincho","Hiragino Kaku Gothic ProN",Meiryo,serif;font-weight:700;font-size:clamp(24px,3.2vw,32px);margin:0 0 32px;line-height:1.5}
 section{padding:96px 0 0}
 
 /* hero */
@@ -48,8 +48,8 @@ section{padding:96px 0 0}
 /* seal card */
 .seals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
 .seal{position:relative;border:1px solid var(--line);background:var(--paper);padding:28px 26px;border-radius:2px}
-.seal .badge{position:absolute;top:24px;right:24px;width:64px;height:64px;border-radius:50%;border:3px solid var(--red);display:flex;align-items:center;justify-content:center;color:var(--red);font-family:"Shippori Mincho",serif;font-weight:700;font-size:15px;text-align:center;line-height:1.2;transform:rotate(-8deg)}
-.seal h3{margin:0 44px 12px 0;font-family:"Shippori Mincho",serif;font-weight:700;font-size:21px}
+.seal .badge{position:absolute;top:24px;right:24px;width:64px;height:64px;border-radius:50%;border:3px solid var(--red);display:flex;align-items:center;justify-content:center;color:var(--red);font-family:"Shippori Mincho","Hiragino Kaku Gothic ProN",Meiryo,serif;font-weight:700;font-size:15px;text-align:center;line-height:1.2;transform:rotate(-8deg)}
+.seal h3{margin:0 44px 12px 0;font-family:"Shippori Mincho","Hiragino Kaku Gothic ProN",Meiryo,serif;font-weight:700;font-size:21px}
 .seal dl{margin:16px 0 0;border-top:1px solid var(--line)}
 .seal dl>div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
 .seal dt{font-weight:700;color:var(--sub)}
@@ -62,7 +62,7 @@ section{padding:96px 0 0}
 /* small seals row for AIPH */
 .grades{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .grade{border:1px solid var(--line);background:var(--paper);padding:20px 18px;text-align:left}
-.grade .g{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);font-family:"Shippori Mincho",serif;font-weight:700;font-size:16px;margin-bottom:12px}
+.grade .g{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);font-family:"Shippori Mincho","Hiragino Kaku Gothic ProN",Meiryo,serif;font-weight:700;font-size:16px;margin-bottom:12px}
 .grade.on .g{border-color:var(--red);color:var(--red)}
 .grade h4{margin:0 0 8px;font-size:15px}
 .grade p{margin:0;font-size:13px;color:var(--sub);line-height:1.7}
@@ -76,7 +76,7 @@ section{padding:96px 0 0}
 /* diagram */
 .flow{display:flex;align-items:center;gap:0;flex-wrap:wrap;justify-content:center;margin-top:8px}
 .flow .step{border:var(--rule);background:var(--paper);padding:18px 22px;text-align:center;min-width:160px}
-.flow .step b{display:block;font-family:"Shippori Mincho",serif;font-size:17px}
+.flow .step b{display:block;font-family:"Shippori Mincho","Hiragino Kaku Gothic ProN",Meiryo,serif;font-size:17px}
 .flow .step span{display:block;margin-top:4px;font-size:13px;color:var(--sub)}
 .flow .arrow{font-size:28px;color:var(--red);padding:0 18px}
 @media (max-width:640px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);padding:8px 0}}
@@ -137,7 +137,7 @@ footer li{margin-bottom:4px}
           <div><dt>趣旨</dt><dd>人類が直面する特定の課題に応えるテーマ型の博覧会</dd></div>
           <div><dt>会期・規模</dt><dd>会期上限3か月、会場面積上限25ha</dd></div>
           <div><dt>パビリオン</dt><dd>主催者が会場を建設し、参加国はスペースを借りてカスタマイズ</dd></div>
-          <div><dt>開催間隔</dt><dd>同一国内でのWorld/Specialised Expoは最低15年間隔、との情報がありますが、BIE公式サイトの本文中で該当箇所を確認できておらず要確認です（下記コラム参照）</dd></div>
+          <div><dt>開催間隔</dt><dd>同一国内でのWorld/Specialised Expoは最低15年間隔、との情報がありますが、BIE公式サイトの本文中で該当箇所を確認できておらず要確認です（AIPH A1園芸博は別ルールのため対象外。下記コラム参照）</dd></div>
           <div><dt>申請時期</dt><dd>開催の5〜6年前</dd></div>
         </dl>
         <p class="pages">掲載ページ：<a href="belgrade-expo-2027.html">ベオグラード国際博覧会2027</a>／<a href="green-expo-2027.html">GREEN×EXPO 2027</a></p>
@@ -152,7 +152,7 @@ footer li{margin-bottom:4px}
     <h2 class="mincho">AIPHの4区分（園芸博）</h2>
     <p style="margin:-12px 0 28px;color:var(--sub)">園芸博（花や緑がテーマの博覧会）は、AIPHが規模に応じて4段階に区分しています。BIE認定が必要なのはA1だけです。</p>
     <div class="grades">
-      <div class="grade on"><span class="g">A1</span><h4>大規模国際園芸博</h4><p>会期3〜6か月／最低50ha（建物は10%まで）／最低10か国参加</p><span class="bie">BIE認定 必須</span><p class="pages"><a href="green-expo-2027.html">GREEN×EXPO 2027</a><br><a href="korat-expo-2029.html">コラート国際園芸博覧会2029</a><br><a href="minnesota-expo-2031.html">ミネソタ国際園芸博覧会2031</a></p></div>
+      <div class="grade on"><span class="g">A1</span><h4>大規模国際園芸博</h4><p>会期3〜6か月／最低50ha（建物は10%まで）／最低10か国参加／同一国内での開催間隔は最低10年（異なる国では最低2年）</p><span class="bie">BIE認定 必須</span><p class="pages"><a href="green-expo-2027.html">GREEN×EXPO 2027</a><br><a href="korat-expo-2029.html">コラート国際園芸博覧会2029</a><br><a href="minnesota-expo-2031.html">ミネソタ国際園芸博覧会2031</a></p></div>
       <div class="grade"><span class="g">B</span><h4>グリーン博</h4><p>会期3〜6か月／最低25ha／最低10の国際参加者</p><span class="bie">BIE認定 不要</span><p class="pages"><a href="udonthani-expo-2026.html">ウドンターニー国際園芸博覧会2026</a><br><a href="ulsan-expo-2028.html">蔚山国際庭園博覧会2028</a><br><a href="baghdad-expo-2029.html">バグダッド国際緑化博覧会2029</a></p></div>
       <div class="grade"><span class="g">C</span><h4>園芸ショー</h4><p>会期4〜20日／最低6,000㎡／最低6の国際参加者</p><span class="bie">BIE認定 不要</span><p class="pages" style="color:var(--sub)">該当ページなし</p></div>
       <div class="grade"><span class="g">D</span><h4>園芸見本市</h4><p>会期の定めなし／参加者の60%以上が園芸生産・供給関連</p><span class="bie">BIE認定 不要</span><p class="pages" style="color:var(--sub)">該当ページなし</p></div>
@@ -201,7 +201,7 @@ footer li{margin-bottom:4px}
         </tbody>
       </table>
     </div>
-    <p style="margin:20px 0 0;font-size:13px;color:var(--sub)">大阪・関西万博（2025年・BIE登録博）の会期上限・面積上限は登録博の枠組みによるもので、2年後に開催されるGREEN×EXPO 2027はAIPH A1クラス（会期3〜6か月・最低50ha）という別の枠で、認定博の会期上限3か月・面積上限25haの対象外です。ただし本ページ上部の「同一国内15年間隔」という情報が事実だとすると、同じ日本国内でこの2つのBIE認定イベントが2年しか空かずに開催されることになり、整合性を確認できていません。この間隔ルール自体の出典をBIE公式サイト本文で確認できていないため、上のセルでは「要確認」としています。</p>
+    <p style="margin:20px 0 0;font-size:13px;color:var(--sub)">大阪・関西万博（2025年・BIE登録博）の2年後にGREEN×EXPO 2027（AIPH A1・BIE認定博）が開催されるのは、矛盾ではありません。BIE認定を受ける博覧会には、（1）通常のWorld Expo・Specialised Expo（国際博覧会条約 第4条A項）と、（2）AIPHが承認する園芸博覧会（同条約 第4条B項2）という、条文上別枠の2系統があり、開催間隔のルールもそれぞれ独立しています。園芸博覧会（AIPH A1）の同一国内での開催間隔は最低10年で、日本国内の直近のA1相当は1990年の大阪「花の万博」（37年前）のため、この基準は満たしています。一方、「World/Specialised Expoは同一国内で最低15年間隔」という情報については、BIE公式サイトの本文中で該当箇所を確認できていないため、上のセルでは「要確認」としています（いずれにせよ、この15年ルールはA1園芸博には適用されないため、大阪万博とGREEN×EXPO 2027の間隔とは無関係です）。</p>
   </div>
 </section>
 
@@ -227,6 +227,7 @@ footer li{margin-bottom:4px}
       <li><a href="https://www.bie-paris.org/site/en/expos/about-expos/how-to-organize-an-expo" target="_blank" rel="noopener noreferrer">How is an Expo Organised?（BIE公式）</a></li>
       <li><a href="https://aiph.org/expos/categories/" target="_blank" rel="noopener noreferrer">AIPH Approved Expo Categories（AIPH公式）</a></li>
       <li><a href="https://aiph.org/expos/regulations/" target="_blank" rel="noopener noreferrer">AIPH Expo Regulations（AIPH公式）</a></li>
+      <li><a href="https://www.bie-paris.org/site/en/expos/horticultural-expos/about-horticultural-expos" target="_blank" rel="noopener noreferrer">About Horticultural Expos（BIE公式・国際博覧会条約第4条B項2、同一国内10年間隔の出典）</a></li>
       <li><a href="https://aiph.org/expos/calendar/" target="_blank" rel="noopener noreferrer">AIPH Expo Calendar（AIPH公式）</a></li>
       <li><a href="https://www.bie-paris.org/site/en/expos/triennale-di-milano/about-triennale-di-milano" target="_blank" rel="noopener noreferrer">About the Triennale Milano（BIE公式）</a></li>
       <li><a href="https://ja.wikipedia.org/wiki/国際園芸博覧会" target="_blank" rel="noopener noreferrer">国際園芸博覧会（ウィキペディア日本語版、参考）</a></li>
